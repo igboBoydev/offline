@@ -32,6 +32,15 @@
       <label class="block text-gray-700">Latitude</label>
       <input type="text" [(ngModel)]="details.latitude" name="latitude" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
-    <button type="submit" class="p-2 bg-green-500 text-white rounded">Submit</button>
+    <button 
+          type="submit" 
+          [disabled]="contactForm.invalid"
+          [ngClass]="{
+            'p-3 bg-green-500 text-white rounded form-valid': !contactForm.invalid,
+            'p-2 bg-gray-400 text-white rounded cursor-not-allowed': contactForm.invalid
+          }">
+    Submit</button>
   </form>
 </div>
+
+<!-- p-2 bg-green-500 text-white rounded -->
