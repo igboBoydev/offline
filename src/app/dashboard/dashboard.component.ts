@@ -20,8 +20,6 @@ export class DashboardComponent implements AfterViewInit {
 
   private map: any;
 
-  constructor() {}
-
   ngAfterViewInit(): void {
     this.initMap();
     this.addMarkers();
